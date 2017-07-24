@@ -1,9 +1,13 @@
 class Timing
-  def initialize(app)
+  def initialize(app, opts = {}, &b)
     @app = app
+    @pid = opts[:pid]
+    @b = b
+    yield if block_given?
   end
 
   def call(env)
+    @b.call
     ts = Time.now
     sleep 1
     status, headers, body = @app.call(env)
