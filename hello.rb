@@ -1,5 +1,5 @@
 class Hello
   def self.call(env)
-    ['200', { 'Content-Type' => 'text/html' }, ['<h1>Hello, Rack!</div>']]
+    ['200', { 'Content-Type' => 'text/html' }, ['<h1>rackup!</div>']]
   end
 end
