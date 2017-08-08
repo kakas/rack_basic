@@ -3,6 +3,7 @@ class Timing
     @app = app
   end
 
+  # app 的 response 要回傳 status, headers, body, middleware 也是同理
   def call(env)
     ts = Time.now
     sleep 1
